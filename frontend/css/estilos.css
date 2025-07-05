@@ -1,0 +1,67 @@
+:root {
+    --fondo: #fef6f9;
+    --primario: #fcbfca;
+    --secundario: #c9e4de;
+    --texto: #333;
+    --input-bg: #fff;
+    --borde: #ddd;
+    --boton: #a0d8ef;
+    --boton-hover: #89c2d9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: var(--input-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primario);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    background-color: var(--boton);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--boton-hover);
+}
+
+#mensaje {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #5a5a5a;
+}
