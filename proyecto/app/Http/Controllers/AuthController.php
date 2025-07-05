@@ -37,4 +37,28 @@ class AuthController extends Controller
 
         return response()->json(['mensaje' => 'Usuario registrado exitosamente', 'usuario' => $usuario]);
     }
+
+    public function iniciarSesion(Request $request)
+    {
+        $credentials = $request->only('correo_electronico', 'contraseña');
+
+        //Buscar ususario por correo electronico
+        $usuario = Usuario::where('correo_electronico', $credentials['correo_electronico'])->first();
+        
+        //verificar usuario y contraseña
+        if (!$usuario || !Hash::check($credentials['contraseña'], $usuario->contraseña)) {
+            return response()->json(['error' => 'Credenciales inválidas'], 401);
+        }
+
+        // Si las credenciales son válidas, retornar un mensaje de éxito
+        // Aquí podrías generar un token JWT o una sesión si lo necesitas
+        return response()->json([
+            'mensaje' => 'Inicio de sesión exitoso',
+            'usuario' => [
+            'nombre' => $usuario->nombre,
+            'apellido' => $usuario->apellido
+            ]
+        ]);
+    
+    }
 }

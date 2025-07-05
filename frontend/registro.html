@@ -7,21 +7,27 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Registro de Usuario</h1>
+    <header>
+        <h1 class="titulo-principal">Bohemia Hair</h1>
+    </header>
 
-    <form id="formRegistro">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="text" name="apellido" placeholder="Apellido" required>
-        <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
-        <input type="password" name="contraseña" placeholder="Contraseña" required>
-        <input type="text" name="telefono" placeholder="Teléfono" required>
-        <input type="text" name="red_social" placeholder="Red Social">
-        <input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
-        <button type="submit">Registrarse</button>
-    </form>
+    <main>
+        <section class="registro-section">
+            <h2 class="subtitulo-formulario">Registro de Usuario</h2>
 
-    <p id="mensaje"></p>
+            <form id="registroForm">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <input type="tel" name="telefono" placeholder="Teléfono">
+                <input type="url" name="red_social" placeholder="Red Social">
+                <input type="date" name="fecha_nacimiento">
+                <button type="submit">Registrarse</button>
+            </form>
 
-    <script src="js/registro.js"></script>
+            <p id="mensaje"></p>
+        </section>
+    </main>
 </body>
 </html>

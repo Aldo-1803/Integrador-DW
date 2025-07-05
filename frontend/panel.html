@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Usuario</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<style>
+    .panel {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #ffe6f0;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .nombre-usuario {
+      font-size: 1.5em;
+      color: #d63384;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="panel">
+    <h1>Bienvenido/a</h1>
+    <p class="nombre-usuario" id="nombreUsuario"></p>
+    <p>Este es tu panel de usuario en Bohemia Hair 🌸</p>
+  </div>
+
+  <script>
+    // Intentar obtener el usuario desde el localStorage
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    if (usuario) {
+      document.getElementById('nombreUsuario').textContent =
+        usuario.nombre + " " + usuario.apellido;
+    } else {
+      document.getElementById('nombreUsuario').textContent = 'Invitado';
+    }
+  </script>
+
+</body>
+</html>
