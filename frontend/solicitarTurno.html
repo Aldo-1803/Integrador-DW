@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitar Turno - Bohemia Hair</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1 class="titulo-principal">Bohemia Hair</h1>
+
+  <section class="formulario-turno">
+      <h2 class="subtitulo-formulario">Solicitar Turno</h2>
+
+      <form id="turnoForm">
+        <select id="servicio" name="servicio" required>
+          <option value="">Seleccioná un servicio</option>
+        </select>
+
+        <input type="date" name="fecha" required>
+        <input type="time" name="hora" required>
+
+        <button type="submit" class="btn-principal">Solicitar</button>
+
+        <div>
+            <button type="reset" class="btn-cancelar">Cancelar</button>
+            <button type="button" class="btn-volver" onclick="window.history.back()">Volver atrás</button>
+
+        </div>
+      </form>
+
+    <p id="mensajeTurno"></p>
+  </section>
+
+  <script src="js/solicitarTurno.js"></script>
+
+</body>
+</html>

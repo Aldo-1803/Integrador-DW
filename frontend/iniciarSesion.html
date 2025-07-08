@@ -4,57 +4,25 @@
     <meta charset="UTF-8">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 class="titulo-principal">Bohemia Hair</h1>
 
     <section class="registro-section">
         <h2 class="subtitulo-formulario">Iniciar Sesión</h2>
-
-        <form id="loginForm">
-            <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
-            <input type="password" name="contraseña" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
+        
+        <div class="auth-contailer">
+            <form id="loginForm">
+                <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
 
         <p id="mensajeLogin"></p>
     </section>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const data = {
-                correo_electronico: form.correo_electronico.value,
-                contraseña: form.contraseña.value
-            };
-
-            try {
-                const response = await fetch('http://localhost:8000/api/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-
-                const result = await response.json();
-                const mensaje = document.getElementById('mensajeLogin');
-
-                if (response.ok) {
-                        // Guardar info básica si querés (opcional)
-                        localStorage.setItem('usuario', JSON.stringify(result.usuario));
-
-                        // Redirigir al panel
-                        window.location.href = 'panel.html';
-                } else {
-                    mensaje.textContent = result.mensaje || 'Error al iniciar sesión';
-                    mensaje.style.color = 'red';
-                }
-            } catch (error) {
-                document.getElementById('mensajeLogin').textContent = 'Error de conexión con el servidor';
-                mensaje.style.color = 'red';
-            }
-        });
-    </script>
+    <script src="js/iniciarSesion.js"></script>
 </body>
 </html>

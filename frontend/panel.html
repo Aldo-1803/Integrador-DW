@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Panel de Usuario</title>
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
-<style>
-    .panel {
-      max-width: 500px;
-      margin: 60px auto;
-      padding: 30px;
-      background-color: #ffe6f0;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    .nombre-usuario {
-      font-size: 1.5em;
-      color: #d63384;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Panel de Usuario</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="contenedor">
+        <h1>Bohemia Hair</h1>
+        <h2 id="bienvenida"></h2>
+        
+        <div class="botones">
+            <button type="button" onclick="irASolicitarTurno()">Solicitar Turno</button>
+            <button type="button" onclick="irACatalogo()">Ver Catálogo</button>
+            <button type="button" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+    </div>
 
-  <div class="panel">
-    <h1>Bienvenido/a</h1>
-    <p class="nombre-usuario" id="nombreUsuario"></p>
-    <p>Este es tu panel de usuario en Bohemia Hair 🌸</p>
-  </div>
-
-  <script>
-    // Intentar obtener el usuario desde el localStorage
-    const usuario = JSON.parse(localStorage.getItem('usuario'));
-
-    if (usuario) {
-      document.getElementById('nombreUsuario').textContent =
-        usuario.nombre + " " + usuario.apellido;
-    } else {
-      document.getElementById('nombreUsuario').textContent = 'Invitado';
-    }
-  </script>
-
-</body>
+    <div class="panel-usuario">
+        <section id="turnosPendientes">
+            <h2>Mis Turnos Pendientes</h2>
+            <ul id="listaTurnos"></ul>
+        </section>
+    </div>
+    <script src="js/panel.js"></script>
+</body>   
 </html>

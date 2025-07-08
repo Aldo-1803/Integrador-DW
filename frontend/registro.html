@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,19 +13,21 @@
     </header>
 
     <main>
-        <section class="registro-section">
-            <h2 class="subtitulo-formulario">Registro de Usuario</h2>
-
-            <form id="registroForm">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="text" name="apellido" placeholder="Apellido" required>
-                <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
-                <input type="password" name="contraseña" placeholder="Contraseña" required>
-                <input type="tel" name="telefono" placeholder="Teléfono">
-                <input type="url" name="red_social" placeholder="Red Social">
-                <input type="date" name="fecha_nacimiento">
-                <button type="submit">Registrarse</button>
-            </form>
+        
+            <section class="registro-section">
+                <h2 class="subtitulo-formulario">Registro de Usuario</h2>
+                <div class="auth-contailer">
+                    <form id="registroForm">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                        <input type="email" name="correo_electronico" placeholder="Correo electrónico" required>
+                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                        <input type="tel" name="telefono" placeholder="Teléfono">
+                        <input type="url" name="red_social" placeholder="Red Social">
+                        <input type="date" name="fecha_nacimiento">
+                        <button type="submit">Registrarse</button>
+                    </form>
+                </div>
 
             <p id="mensaje"></p>
         </section>
